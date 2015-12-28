@@ -1,69 +1,34 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-
+import {fetchUsers} from '../actions/users';
+import RenderTable  from '../components/RenderTable'
 class App extends Component {
     componentDidMount () {
         const {dispatch} = this.props;
-        dispatch(initEnvironment());
-        dispatch(initAuth());
-        dispatch(initNavigator());
-    }
+        dispatch(fetchUsers('users.json'));
 
-    renderContent() {
-        const {path} = this.props;
-        switch(path[0]) {
-        case 'songs':
-            switch(path.length) {
-            case 1:
-                return <SongsContainer />;
-            case 2:
-                return <SongContainer />;
-            }
-        case 'users':
-            return <UserContainer />;
-        case 'me':
-            return <MeContainer />;
-        default:
-            return;
-        }
     }
-
+    componentWillReceiveProps(nextProps) {
+        const {dispatch, users} = this.props;
+    }
     render() {
-        const {height, isMobile, width} = this.props;
-        if (isMobile) {
-            return (
-                <div className='mobile' style={{height: `${height}px`, width: `${width}px`}}>
-                    <PlayerContainer />
-                    {this.renderContent()}
-                    <NavContainer />
-                </div>
-            );
-        }
-
+        const {users} = this.props;
         return (
             <div>
-                <NavContainer />
-                {this.renderContent()}
-                <PlayerContainer />
-                <ModalContainer />
+               <RenderTable  users = { users }/>
             </div>
         );
     }
 }
 
 App.propTypes = {
-    dispatch: PropTypes.func.isRequired,
-    path: PropTypes.array.isRequired
+    dispatch: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
-    const {environment, navigator} = state;
-
+    const {users} = state;
     return {
-        path: navigator.route.path,
-        width: environment.width
+      users  :users
     };
 }
-
-
 export default connect(mapStateToProps)(App);

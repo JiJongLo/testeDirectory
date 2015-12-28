@@ -1,0 +1,478 @@
+{
+  "id" : 3145728,
+  "name" : "Vlad Bodrov",
+  "position" : "director",
+  "count" : 3,
+  "children" : [
+    {
+      "id" : 3245628,
+      "name" : "Hella Sergeyevna",
+      "position" : "deputy",
+      "count" : 4,
+      "children" : [
+        {
+          "id" : 314577568,
+          "name" : "Edvar Mironov",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 314866346536,
+              "name" : "1",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3148665365346536,
+              "name" : "2",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315466386536,
+              "name" : "3",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 385443736,
+              "name" : "4",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 42367363566,
+              "name" : "5",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 6456456466,
+          "name" : "Galina Yefremova",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 24235525252,
+              "name" : "6",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 1324245346536,
+              "name" : "7",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 762425532534,
+              "name" : "8",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 1234343535353,
+              "name" : "9",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 42367363566,
+              "name" : "10",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 314577568,
+          "name" : "LAda Zuyeva",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 783563656456,
+              "name" : "11",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 31486653456435645665346536,
+              "name" : "12",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 31546635645654586536,
+              "name" : "13",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3854645646543736,
+              "name" : "14",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 423675645363566,
+              "name" : "15",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 314577568,
+          "name" : "Lucla Andreyevna",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 314866346536,
+              "name" : "16",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3148665365346536,
+              "name" : "17",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315466553453434386536,
+              "name" : "18",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 385443534534754336,
+              "name" : "19",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 42367543534635566,
+              "name" : "20",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        }
+
+      ]
+    },
+    {
+      "id" : 3145628,
+      "name" : "Arthur Birykov",
+      "position" : "deputy",
+      "count" : 4,
+      "children" : [
+        {
+          "id" : 314577568,
+          "name" : "Ludmila Zubareva",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 3148665345346346536,
+              "name" : "21",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3148665365456365365346536,
+              "name" : "22",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315466364565464536586536,
+              "name" : "23",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3854436564564564536736,
+              "name" : "24",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 4236745656456456363566,
+              "name" : "25",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 314577568,
+          "name" : "Vladen Kalinin",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 314866346536,
+              "name" : "26",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3148665365346536,
+              "name" : "27",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315466386536,
+              "name" : "28",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 385443736,
+              "name" : "29",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 42367363566,
+              "name" : "30",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 314577568,
+          "name" : "Pauline Zotova",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 31486342424246346536,
+              "name" : "31",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 31486653654424242465346536,
+              "name" : "32",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3154664352354325235386536,
+              "name" : "33",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 385454386994243736,
+              "name" : "34",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 4236737998234463566,
+              "name" : "35",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 314577568,
+          "name" : "Jaromir Vagin",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 31486121232116346536,
+              "name" : "36",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 314866126241235365346536,
+              "name" : "37",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 311367865466386536,
+              "name" : "38",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 385485646464643736,
+              "name" : "39",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 423693165577363566,
+              "name" : "40",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id" : 3445628,
+      "name" : "Jeanne Shubina",
+      "position" : "deputy",
+      "count" : 4,
+      "children" : [
+        {
+          "id" : 314577568,
+          "name" : "Peter Pirogov",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 3148608970806346536,
+              "name" : "41",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 31486659780780365346536,
+              "name" : "42",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315467089978596386536,
+              "name" : "43",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3854430567893736,
+              "name" : "44",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 4234687967363566,
+              "name" : "45",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 314577568,
+          "name" : "Hella Bodrova",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 31486678767896346536,
+              "name" : "46",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 314866536523546347346536,
+              "name" : "47",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 31546745676386536,
+              "name" : "48",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3854658756843736,
+              "name" : "49",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 423673635986798666,
+              "name" : "50",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 31457708968568,
+          "name" : "Tatiana Mishina",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 314866781343432767896346536,
+              "name" : "51",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 3148665365256534543546347346536,
+              "name" : "52",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315467456435345345376386536,
+              "name" : "53",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 38546587567567756843736,
+              "name" : "54",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 42367363655465365986798666,
+              "name" : "55",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        },
+        {
+          "id" : 31457708968568,
+          "name" : "Nelly Lavrentyev",
+          "position" : "contractor",
+          "count" : 5,
+          "children"  : [
+            {
+              "id" : 3148667857435656346536,
+              "name" : "51",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 31486652835657346536,
+              "name" : "52",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 315874765467376386536,
+              "name" : "53",
+              "position" : "courier",
+              "count" : 0
+            },
+            {
+              "id" : 385485664564563543736,
+              "name" : "54",
+              "position" : "courier",
+              "count" : 0
+            },{
+              "id" : 4252435325436798666,
+              "name" : "55",
+              "position" : "courier",
+              "count" : 0
+            }
+          ]
+        }
+
+      ]
+    }
+  ]
+}

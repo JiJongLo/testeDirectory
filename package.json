@@ -48,5 +48,10 @@
     "velocity-react": "^1.1.1",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.11.0"
+  },
+  "dependencies": {
+    "d3": "^3.5.12",
+    "jsondom": "^0.4.1",
+    "whatwg-fetch": "^0.10.1"
   }
 }
