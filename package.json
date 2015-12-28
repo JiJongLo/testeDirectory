@@ -52,6 +52,7 @@
   "dependencies": {
     "d3": "^3.5.12",
     "jsondom": "^0.4.1",
+    "material-ui": "^0.14.0",
     "whatwg-fetch": "^0.10.1"
   }
 }

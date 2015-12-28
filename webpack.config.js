@@ -6,12 +6,12 @@ module.exports = {
     entry: {
         main: [
             './scripts/main.js',
-            'webpack-dev-server/client?http://localhost:9000',
+            'webpack-dev-server/client?http://localhost:9002',
             'webpack/hot/only-dev-server'
         ]
     },
     output: {
-        publicPath: 'http://localhost:9000/',
+        publicPath: 'http://localhost:9002/',
         filename: '/js/[name].js'
     },
     module: {
@@ -23,9 +23,9 @@ module.exports = {
     plugins: [ignore],
     devServer: {
         host: '0.0.0.0',
-        port : '9000',
+        port : '9002',
         proxy: {
-            '/api/*': 'http://localhost:8081'
+            '/api/*': 'http://localhost:9001'
         }
     }
 };
