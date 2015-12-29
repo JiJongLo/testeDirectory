@@ -50,10 +50,11 @@ class RenderTable extends Component {
         var root;
 
         // size of the diagram
-        var viewerWidth = $(document).width();
-        var viewerHeight = $(document).height();
+        var viewerWidth = window.innerWidth;
+        var viewerHeight = window.innerHeight;
         var tree = d3.layout.tree()
             .size([viewerWidth, viewerHeight]);
+        console.log(viewerWidth, viewerHeight)
 
         // define a d3 diagonal projection for use by the node paths later on.
         var diagonal = d3.svg.diagonal()
@@ -337,9 +338,8 @@ class RenderTable extends Component {
             scale = zoomListener.scale();
             x = -source.x0;
             y = source.y0;
-            x = x * scale + viewerWidth / 2;
+            x = viewerWidth / 12 - 100;
             y = viewerHeight / 4;
-            console.log(y)
             d3.select('g').transition()
                 .duration(duration)
                 .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
@@ -387,7 +387,7 @@ class RenderTable extends Component {
             };
             childCount(0, root);
             var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line
-            tree = tree.size([viewerWidth, newHeight]);
+            tree = tree.size([viewerWidth - 150, newHeight - 150]);
 
             // Compute the new tree layout.
             var nodes = tree.nodes(root).reverse(),
@@ -546,7 +546,7 @@ class RenderTable extends Component {
         var svgGroup = baseSvg.append("g");
         // Define the root
         root = treeData;
-        root.x0 = viewerWidth / 2;
+        root.x0 = viewerWidth / 2 - 150;
         root.y0 = viewerHeight / 2;
 
         // Layout the tree initially and center on the root node.
