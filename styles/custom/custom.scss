@@ -1,18 +1,21 @@
-circle {
+.node {
   cursor: pointer;
+}
+
+.node circle {
   fill: #fff;
   stroke: steelblue;
-  stroke-width: 1.5px;
+  stroke-width: 3px;
 }
 
-text {
-  font-size:10px;
+.node text {
+  font: 12px sans-serif;
 }
 
-path.link {
+.link {
   fill: none;
   stroke: #ccc;
-  stroke-width: 1.5px;
+  stroke-width: 2px;
 }
 .rootTableElement {
   padding : 20px
