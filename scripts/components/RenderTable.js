@@ -53,12 +53,12 @@ class RenderTable extends Component {
         var viewerWidth = $(document).width();
         var viewerHeight = $(document).height();
         var tree = d3.layout.tree()
-            .size([viewerHeight, viewerWidth]);
+            .size([viewerWidth, viewerHeight]);
 
         // define a d3 diagonal projection for use by the node paths later on.
         var diagonal = d3.svg.diagonal()
             .projection(function(d) {
-                return [d.y, d.x];
+                return [d.x, d.y];
             });
 
         // A recursive helper function for performing some setup by walking through all nodes
@@ -227,10 +227,10 @@ class RenderTable extends Component {
                     }
                 }
 
-                d.x0 += d3.event.dy;
-                d.y0 += d3.event.dx;
+                d.x0 += d3.event.dx;
+                d.y0 += d3.event.dy;
                 var node = d3.select(this);
-                node.attr("transform", "translate(" + d.y0 + "," + d.x0 + ")");
+                node.attr("transform", "translate(" + d.x0 + "," + d.y0 + ")");
                 updateTempConnector();
             }).on("dragend", function(d) {
                 if (d == root) {
@@ -310,12 +310,12 @@ class RenderTable extends Component {
                 // have to flip the source coordinates since we did this for the existing connectors on the original tree
                 data = [{
                     source: {
-                        x: selectedNode.y0,
-                        y: selectedNode.x0
+                        x: selectedNode.x0,
+                        y: selectedNode.y0
                     },
                     target: {
-                        x: draggingNode.y0,
-                        y: draggingNode.x0
+                        x: draggingNode.x0,
+                        y: draggingNode.y0
                     }
                 }];
             }
@@ -335,10 +335,11 @@ class RenderTable extends Component {
 
         function centerNode(source) {
             scale = zoomListener.scale();
-            x = -source.y0;
-            y = -source.x0;
+            x = -source.x0;
+            y = source.y0;
             x = x * scale + viewerWidth / 2;
-            y = y * scale + viewerHeight / 2;
+            y = viewerHeight / 4;
+            console.log(y)
             d3.select('g').transition()
                 .duration(duration)
                 .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
@@ -386,7 +387,7 @@ class RenderTable extends Component {
             };
             childCount(0, root);
             var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line
-            tree = tree.size([newHeight, viewerWidth]);
+            tree = tree.size([viewerWidth, newHeight]);
 
             // Compute the new tree layout.
             var nodes = tree.nodes(root).reverse(),
@@ -411,7 +412,7 @@ class RenderTable extends Component {
                 .call(dragListener)
                 .attr("class", "node")
                 .attr("transform", function(d) {
-                    return "translate(" + source.y0 + "," + source.x0 + ")";
+                    return "translate(" + source.x0 + "," + source.y0 + ")";
                 })
                 .on('click', click);
 
@@ -473,7 +474,7 @@ class RenderTable extends Component {
             var nodeUpdate = node.transition()
                 .duration(duration)
                 .attr("transform", function(d) {
-                    return "translate(" + d.y + "," + d.x + ")";
+                    return "translate(" + d.x + "," + d.y + ")";
                 });
 
             // Fade the text in
@@ -484,7 +485,7 @@ class RenderTable extends Component {
             var nodeExit = node.exit().transition()
                 .duration(duration)
                 .attr("transform", function(d) {
-                    return "translate(" + source.y + "," + source.x + ")";
+                    return "translate(" + source.x + "," + source.y + ")";
                 })
                 .remove();
 
@@ -545,8 +546,8 @@ class RenderTable extends Component {
         var svgGroup = baseSvg.append("g");
         // Define the root
         root = treeData;
-        root.x0 = viewerHeight / 2;
-        root.y0 = 0;
+        root.x0 = viewerWidth / 2;
+        root.y0 = viewerHeight / 2;
 
         // Layout the tree initially and center on the root node.
         update(root);
