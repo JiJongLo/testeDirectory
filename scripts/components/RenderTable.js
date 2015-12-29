@@ -14,39 +14,36 @@ class RenderTable extends Component {
 
     }
     generateRow(users){
-        let w = 960,
+        let w = 1000,
             duration = 500,
             i = 0,
-            h = 500;
+            h = 800;
         let tree = d3.layout.tree()
-            .size([w - 20, h - 20]);
+            .size([w - 70, h - 70]);
         let root = {},
             nodes = tree(root);
-
         root.parent = root;
         root.px = root.x;
         root.py = root.y;
         let diagonal = d3.svg.diagonal();
-
         var vis = d3.select(".rootTableElement").append("svg:svg")
             .attr("width", w)
             .attr("height", h)
+            .attr("padding", 20)
             .append("svg:g")
-            .attr("transform", "translate(40,0)");
-             users.x0 = 800;
+            .attr("transform", "translate(70,0)");
+             users.x0 = 380;
              users.y0 = 0;
             update(root = users);
 
 
         function update(source) {
-
             // Compute the new tree layout.
-            var nodes = tree.nodes(root).reverse();
+            var nodes = tree.nodes(root);
             console.log(nodes)
             // Update the nodes…
             var node = vis.selectAll("g.node")
                 .data(nodes, function(d) { return d.id || (d.id = ++i); });
-
             var nodeEnter = node.enter().append("svg:g")
                 .attr("class", "node")
                 .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; });
@@ -58,9 +55,9 @@ class RenderTable extends Component {
                 //.attr("class", "node")
                 //.attr("cx", function(d) { return source.x0; })
                 //.attr("cy", function(d) { return source.y0; })
-                .attr("r", 4.5)
+                .attr("r", 15)
                 .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; })
-                .on("click", click);
+                //.on("click", click);
 
             nodeEnter.append("svg:text")
                 .attr("x", function(d) { return d._children ? -8 : 8; })
@@ -72,7 +69,7 @@ class RenderTable extends Component {
             // Transition nodes to their new position.
             nodeEnter.transition()
                 .duration(duration)
-                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
                 .style("opacity", 1)
                 .select("circle")
                 //.attr("cx", function(d) { return d.x; })
@@ -81,7 +78,7 @@ class RenderTable extends Component {
 
             node.transition()
                 .duration(duration)
-                .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+                .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
                 .style("opacity", 1);
 
 
@@ -147,10 +144,10 @@ class RenderTable extends Component {
                 .remove();
 
             // Stash the old positions for transition.
-            nodes.forEach(function(d) {
-                d.x0 = d.x;
-                d.y0 = d.y;
-            });
+            //nodes.forEach(function(d) {
+            //    d.x0 = d.x;
+            //    d.y0 = d.y;
+            //});
         }
 
 // Toggle children on click.
