@@ -140,7 +140,13 @@ class RenderTable extends Component {
             d3.select(domNode).select('.ghostCircle').attr('pointer-events', 'none');
             d3.selectAll('.ghostCircle').attr('class', 'ghostCircle show');
             d3.select(domNode).attr('class', 'node activeDrag');
-
+            var dataDomNode = d3.select(domNode).data()[0];
+            var parentPosition = dataDomNode.parent.position;
+            d3.selectAll('.ghostCircle')
+                .filter(function (d, i) {
+                    return d.position === parentPosition;
+                })
+                .style('fill', 'green');
             svgGroup.selectAll("g.node").sort(function(a, b) { // select the parent and sort the path's
                 if (a.id != draggingNode.id) return 1; // a is not the hovered element, send "a" to the back
                 else return -1; // a is the hovered element, bring "a" to the front
