@@ -271,19 +271,21 @@ class RenderTable extends Component {
 
         function endDrag(drag, select) {
             selectedNode = null;
-            fetch('/update', {
-                method: 'post',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    drag: drag.id,
-                    select: select.id
-                })
-            }).then(function (data) {
-                debugger;
-            });
+            if (select) {
+                fetch('/update', {
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        drag: drag.id,
+                        select: select.id
+                    })
+                }).then(function (data) {
+
+                });
+            }
             d3.selectAll('.ghostCircle').attr('class', 'ghostCircle');
             d3.select(domNode).attr('class', 'node');
             // now restore the mouseover event or we won't be able to drag a 2nd time
