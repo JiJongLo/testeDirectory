@@ -250,27 +250,40 @@ class RenderTable extends Component {
                     if (index > -1) {
                         draggingNode.parent.children.splice(index, 1);
                     }
-                    if (typeof selectedNode.children !== 'undefined' || typeof selectedNode._children !== 'undefined') {
-                        if (typeof selectedNode.children !== 'undefined') {
-                            selectedNode.children.push(draggingNode);
-                        } else {
-                            selectedNode._children.push(draggingNode);
-                        }
-                    } else {
-                        selectedNode.children = [];
-                        selectedNode.children.push(draggingNode);
-                    }
+                    //if (typeof selectedNode.children !== 'undefined' || typeof selectedNode._children !== 'undefined') {
+                    //    if (typeof selectedNode.children !== 'undefined') {
+                    //        selectedNode.children.push(draggingNode);
+                    //    } else {
+                    //        selectedNode._children.push(draggingNode);
+                    //    }
+                    //} else {
+                    //    selectedNode.children = [];
+                    //    selectedNode.children.push(draggingNode);
+                    //}
                     // Make sure that the node being added to is expanded so user can see added node is correctly moved
                     expand(selectedNode);
                   //  sortTree();
-                    endDrag();
+                    endDrag(draggingNode, selectedNode);
                 } else {
-                    endDrag();
+                    endDrag(draggingNode, selectedNode);
                 }
             });
 
-        function endDrag() {
+        function endDrag(drag, select) {
             selectedNode = null;
+            fetch('/update', {
+                method: 'post',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    drag: drag.id,
+                    select: select.id
+                })
+            }).then(function (data) {
+                debugger;
+            });
             d3.selectAll('.ghostCircle').attr('class', 'ghostCircle');
             d3.select(domNode).attr('class', 'node');
             // now restore the mouseover event or we won't be able to drag a 2nd time
@@ -410,7 +423,7 @@ class RenderTable extends Component {
             // Update the nodes…
             node = svgGroup.selectAll("g.node")
                 .data(nodes, function(d) {
-                    return d.id = ++i;
+                    return d.id;
                 });
 
             // Enter any new nodes at the parent's previous position.
