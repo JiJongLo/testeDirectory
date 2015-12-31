@@ -272,7 +272,7 @@ class RenderTable extends Component {
         function endDrag(drag, select) {
             selectedNode = null;
             if (select) {
-                fetch('/update', {
+                fetch('rest/update', {
                     method: 'post',
                     headers: {
                         'Accept': 'application/json',
